@@ -163,6 +163,11 @@ pnpm add -D @playwright/test
 # Install only Chromium to save time
 pnpm exec playwright install chromium
 
+# Add test scripts
+npm pkg set scripts.test:e2e="playwright test"
+npm pkg set scripts.test:e2e:ui="playwright test --ui"
+npm pkg set scripts.test:e2e:headed="playwright test --headed"
+
 # Create playwright config manually
 
 cat <<EOF > playwright.config.ts
