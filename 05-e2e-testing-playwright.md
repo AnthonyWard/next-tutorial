@@ -50,13 +50,35 @@ test('has title', async ({ page }) => {
 });
 ```
 
-## 4. Run E2E Tests
+## 4. Add Test Scripts
+Update your `package.json` to include convenient test scripts:
+
 ```bash
-pnpm exec playwright test
+npm pkg set scripts.test:e2e="playwright test"
+npm pkg set scripts.test:e2e:ui="playwright test --ui"
+npm pkg set scripts.test:e2e:headed="playwright test --headed"
 ```
 
-This will start the dev server, run the tests in headless browsers, and report results.
-To see the UI mode:
-```bash
-pnpm exec playwright test --ui
+Or manually add to `package.json`:
+```json
+"scripts": {
+  ...
+  "test:e2e": "playwright test",
+  "test:e2e:ui": "playwright test --ui",
+  "test:e2e:headed": "playwright test --headed"
+}
 ```
+
+## 5. Run E2E Tests
+```bash
+# Headless mode (default)
+pnpm test:e2e
+
+# Interactive UI mode (recommended for debugging)
+pnpm test:e2e:ui
+
+# Headed mode (see the actual browser)
+pnpm test:e2e:headed
+```
+
+This will start the dev server, run the tests in the specified mode, and report results.

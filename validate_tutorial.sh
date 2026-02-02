@@ -42,7 +42,8 @@ echo "Next.js setup complete."
 
 echo "=== Step 2: Add Storybook ==="
 # Using --yes to accept defaults non-interactively
-pnpm dlx storybook@latest init --yes
+# CI=true prevents opening the browser/docs
+CI=true pnpm dlx storybook@latest init --package-manager pnpm --yes
 
 # Validate Storybook
 if [ ! -d ".storybook" ]; then
@@ -156,18 +157,13 @@ pnpm build-storybook --quiet
 echo "Storybook build passed."
 
 echo "=== Step 5: Playwright ==="
-# Non-interactive playwright init
-# --quiet: suppress output
-# --lang: TypeScript
-# --install-deps: install browsers
-# --no-github-actions: don't create yaml
-pnpm create playwright --yes -- --quiet --lang=TypeScript --no-github-actions --browsers=chromium
+# Install Playwright directly
+pnpm add -D @playwright/test
 
-# Update config to use 3000 and ensure webServer
-# We will overwrite the webServer section or just create a simple config for validation to be safe
-# The default config is extensive, let's just ensure we have one that works for the test.
-# Actually, the default config usually has the webServer section commented out.
-# Let's write a simplified safe config for verification.
+# Install only Chromium to save time
+pnpm exec playwright install chromium
+
+# Create playwright config manually
 
 cat <<EOF > playwright.config.ts
 import { defineConfig, devices } from '@playwright/test';
@@ -177,7 +173,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: 'list',
   use: {
     trace: 'on-first-retry',
   },
