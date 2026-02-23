@@ -6,38 +6,38 @@ This plan implements a comprehensive Next.js tutorial (Chapters 2-7) that teache
 
 ## Tasks
 
-- [ ] 1. Set up project structure and supporting documents
+- [x] 1. Set up project structure and supporting documents
   - Create tutorial directory structure for chapters 2-7
   - Create TUTORIAL-OVERVIEW.md with chapter listing and learning outcomes
   - Create COMPLETION-CHECKLIST.md mapping requirements to chapters
   - Create TROUBLESHOOTING.md for common issues
   - _Requirements: 9.4, 10.6_
 
-- [ ] 2. Implement Chapter 2: Basic Form Components
-  - [ ] 2.1 Create chapter-2-start folder with Chapter 1 baseline
+- [x] 2. Implement Chapter 2: Basic Form Components
+  - [x] 2.1 Create chapter-2-start folder with Chapter 1 baseline
     - Copy Next.js setup, Storybook, Vitest, and Playwright configurations
     - Verify all dependencies in package.json and pnpm-lock.yaml
     - _Requirements: 2.1, 2.4_
   
-  - [ ] 2.2 Create Input component with TypeScript and accessibility
+  - [x] 2.2 Create Input component with TypeScript and accessibility
     - Implement Input.tsx with InputProps interface
     - Include ARIA labels, error states, and keyboard navigation
     - Use Tailwind CSS for styling
     - _Requirements: 6.1, 6.3, 6.4_
   
-  - [ ] 2.3 Create Select component with TypeScript and accessibility
+  - [x] 2.3 Create Select component with TypeScript and accessibility
     - Implement Select.tsx with SelectProps interface
     - Include ARIA labels and error states
     - Use Tailwind CSS for styling
     - _Requirements: 6.1, 6.3, 6.4_
   
-  - [ ] 2.4 Create Textarea component with TypeScript and accessibility
+  - [x] 2.4 Create Textarea component with TypeScript and accessibility
     - Implement Textarea.tsx with TextareaProps interface
     - Include ARIA labels and error states
     - Use Tailwind CSS for styling
     - _Requirements: 6.1, 6.3, 6.4_
   
-  - [ ] 2.5 Create Checkbox component with TypeScript and accessibility
+  - [x] 2.5 Create Checkbox component with TypeScript and accessibility
     - Implement Checkbox.tsx with CheckboxProps interface
     - Include ARIA labels and error states
     - Use Tailwind CSS for styling
@@ -53,7 +53,7 @@ This plan implements a comprehensive Next.js tutorial (Chapters 2-7) that teache
     - Add interaction tests for user input and keyboard navigation
     - _Requirements: 5.2_
   
-  - [ ] 2.8 Write Chapter 2 instruction document
+  - [x] 2.8 Write Chapter 2 instruction document
     - Include chapter overview, learning outcomes, and prerequisites
     - Add code examples for each component
     - Include testing examples (unit and Storybook)
