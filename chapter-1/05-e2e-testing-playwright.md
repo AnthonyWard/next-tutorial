@@ -14,16 +14,27 @@ Select the following options if prompted (or the defaults):
 - Add a GitHub Actions workflow? `false` (or true if you want it)
 - Install Playwright browsers? `true`
 
+**Important:** Ensure both `@playwright/test` and `playwright` packages have matching versions in your `package.json` to avoid conflicts:
+
+```json
+"devDependencies": {
+  "@playwright/test": "^1.58.2",
+  "playwright": "^1.58.2"
+}
+```
+
 ## 2. Check Configuration
 A `playwright.config.ts` file has been created. Ensure `webServer` is configured to start your Next.js app during tests.
 
-Open `playwright.config.ts` and ensure the `webServer` block is active (uncomment it if necessary) and pointing to `pnpm dev` or `pnpm start`:
+Open `playwright.config.ts` and ensure the `webServer` block is active (uncomment it if necessary) and pointing to `pnpm dev` or `pnpm start`. Also add `testMatch` to explicitly define test file patterns:
 
 ```typescript
 // playwright.config.ts
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  testDir: './tests',
+  testMatch: '**/*.spec.ts',
   // ... other config
   webServer: {
     command: 'pnpm dev',
@@ -34,7 +45,7 @@ export default defineConfig({
 ```
 
 ## 3. Write an E2E Test
-Create a test file `tests/example.spec.ts` (if it doesn't await exist).
+Create a test file `tests/example.spec.ts` (if it doesn't exist).
 We will test if our home page loads.
 
 ```typescript
@@ -45,8 +56,8 @@ test('has title', async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   // Note: create-next-app default title might vary, check layout.tsx or page.tsx
-  // For this tutorial, we will check if the default Next.js text is present
-  await expect(page.locator('body')).toContainText('Next.js'); 
+  // Check for text that's actually present on the default Next.js page
+  await expect(page.locator('body')).toContainText('To get started'); 
 });
 ```
 

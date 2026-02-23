@@ -1,6 +1,6 @@
 # Step 4: Storybook Interaction Testing
 
-Storybook allows you to simulate user behavior (clicks, typing) directly inside your stories using the `play` function.
+Storybook allows you to simulate user behavior (clicks, typing) directly inside your stories using the `play` function. These interactions run both in the Storybook UI and as automated tests.
 
 ## 1. Install Dependencies
 Install the interaction testing package:
@@ -9,7 +9,7 @@ Install the interaction testing package:
 pnpm add -D @storybook/test
 ```
 
-## 2. Create a Story for our Component
+## 2. Create a Story with Interactions
 Create a new file `src/stories/Msg.stories.ts`:
 
 ```typescript
@@ -53,20 +53,20 @@ export const WithInteraction: Story = {
 3. Open the "Interactions" panel at the bottom.
 4. You should see "PASS" indicating the expectation passed.
 
-## 4. Automated Storybook Testing (Optional)
-To run these tests in the command line (CI/CD), you can use the test runner.
+## 4. Automated Testing with Vitest
+The great news: your play functions already run as automated tests! When you run `pnpm test`, Vitest executes all your stories including their play functions.
 
-Install the runner:
-```bash
-pnpm add -D @storybook/test-runner
+You'll see output like:
+```
+✓ storybook (chromium) src/stories/Msg.stories.ts (2 tests)
+  ✓ Default
+  ✓ WithInteraction
 ```
 
-Add a script to `package.json`:
-```json
-"test-storybook": "test-storybook"
-```
+Both stories run as tests, and the `WithInteraction` story executes its play function automatically. No additional setup needed!
 
-Run storybook in one terminal, and in another:
-```bash
-pnpm test-storybook
-```
+### Benefits of this approach:
+- Write interactions once, use them in Storybook UI and automated tests
+- Single test command runs both unit tests and Storybook tests
+- Fast execution with Vitest's browser mode
+- No need to keep Storybook server running for tests
