@@ -26,7 +26,7 @@ Select the following options if prompted (or the defaults):
 ## 2. Check Configuration
 A `playwright.config.ts` file has been created. Ensure `webServer` is configured to start your Next.js app during tests.
 
-Open `playwright.config.ts` and ensure the `webServer` block is active (uncomment it if necessary) and pointing to `pnpm dev` or `pnpm start`. Also add `testMatch` to explicitly define test file patterns:
+Open `playwright.config.ts` and ensure the `webServer` block is active (uncomment it if necessary) and pointing to `pnpm dev` or `pnpm start`:
 
 ```typescript
 // playwright.config.ts
@@ -34,7 +34,11 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
-  testMatch: '**/*.spec.ts',
+  reporter: 'list', // see https://playwright.dev/docs/test-reporters
+    use: {
+    /* Base URL to use in actions like `await page.goto('')`. */
+    baseURL: 'http://127.0.0.1:3000',
+  },
   // ... other config
   webServer: {
     command: 'pnpm dev',

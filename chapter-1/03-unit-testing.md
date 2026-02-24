@@ -50,7 +50,7 @@ export default defineConfig({
         plugins: [react()],
         test: {
           name: 'components',
-          include: ['src/components/**/*.test.{ts,tsx}'],
+          include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
           environment: 'jsdom',
           globals: true,
           setupFiles: './vitest.setup.ts',
