@@ -23,13 +23,15 @@ In Chapter 2, we expand the application by adding new pages, implementing shared
 
 [Go to Chapter 2](./chapter-2/README.md)
 
-## Chapter 3: Dynamic Routes & Data Fetching (Planned)
+## Chapter 3: Dynamic Routes & Data Fetching
 
 We will build the Event Listing and Details pages.
 - Dynamic Routing with `/events/[id]`
 - Server Components & Data Fetching strategies
 - Handling Loading and Error UI states
 - Mocking data for maintainable tests
+
+[Go to Chapter 3](./chapter-3/README.md)
 
 ## Chapter 4: Forms & Server Actions (Planned)
 
