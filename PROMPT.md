@@ -1,3 +1,0 @@
-I would like a tutorial for developers and testers to get up to speed on Next.js, with Storybooks, and different types of testing from unit, to storybook, and testign with playwright. This technology stack is new to us. Use typecript and pnpm. I would like the tutorial to be broken into sections and saved as separate markdown files, such as step 1, setup next.js. Step 2, add storybooks. Step 3, testing. I like this to be a training series that can be expanded later. I would alos like a script that automatically runs though each step with no user input to validate the tutorial.
-
-Gemini Pro 3
