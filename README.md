@@ -1,6 +1,6 @@
 # Next.js Tutorial
 
-This is a tutorial that walks through starting a Next.js app from scratch, including adding storybooks and tests. We will eventually build this out to be a simple event booking system, demonstrating multi-part forms and state management.
+This is a tutorial that walks through starting a Next.js app from scratch, including adding storybooks and tests. We will eventually build this out to be a simple event booking system, demonstrating multi-part forms and state management. This is to support thise beginning with React and Next, and designed so that both developers and testers get value.
 
 ## The technology stack is
 - Node with PNPM

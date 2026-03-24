@@ -10,6 +10,7 @@ We will cover the following topics:
 2. **Form Validation**: Using Zod and React Hook Form for robust validation.
 3. **Pending States**: Handling pending states with `useFormStatus` and React's `useActionState`.
 4. **User Feedback**: Providing feedback with Toast notifications upon form submission.
+5. **Testing Forms**: Adding unit tests and E2E coverage for our booking flow validations and interactions.
 
 ## Prerequisites
 
