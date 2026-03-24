@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 const initialState = {
   success: false,
   message: '',
-  errors: {},
+  errors: {} as Record<string, string[]>,
 };
 
 export default function BookingForm({ eventId }: { eventId: string }) {
@@ -49,7 +49,7 @@ export default function BookingForm({ eventId }: { eventId: string }) {
       )}
       
       <form action={formAction} className="space-y-4">
-        <input type="hidden" {...register('eventId')} />
+        <input type="hidden" name="eventId" value={eventId} readOnly />
         
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>

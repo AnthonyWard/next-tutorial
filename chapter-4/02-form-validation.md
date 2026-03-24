@@ -91,7 +91,7 @@ import { submitBooking } from '../app/actions/booking';
 const initialState = {
   success: false,
   message: '',
-  errors: {}, // <-- Add errors to initial state
+  errors: {} as Record<string, string[]>, // <-- Add typed errors to initial state
 };
 
 export default function BookingForm({ eventId }: { eventId: string }) {
@@ -136,7 +136,7 @@ export default function BookingForm({ eventId }: { eventId: string }) {
       
       <form action={formAction} className="space-y-4">
         {/* Replace your inputs with {...register('field')} and add error messages */}
-        <input type="hidden" {...register('eventId')} />
+        <input type="hidden" name="eventId" value={eventId} readOnly />
         
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-1 border-gray-700">Name</label>

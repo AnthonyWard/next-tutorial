@@ -84,11 +84,3 @@ export default function BookingForm({ eventId }: { eventId: string }) {
 ```
 
 Now, when you submit your form and everything successfully validates, you'll see a clean toast notification pop up in the corner of your screen!
-
-## Chapter 4 Complete! 🎉
-
-You've successfully built a robust form using modern Next.js and React patterns! You've learned how to:
-- Mutate data safely via **Server Actions**
-- Run client-side validation using **Zod** and **React Hook Form**
-- Handle long-running operations with **useFormStatus**
-- Improve UX with **Toast Notifications**
