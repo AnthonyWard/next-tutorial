@@ -3,6 +3,7 @@
 This is a tutorial that walks through starting a Next.js app from scratch, including adding storybooks and tests. We will eventually build this out to be a simple event booking system, demonstrating multi-part forms and state management.
 
 ## The technology stack is
+- Node with PNPM
 - Next.js
 - Storybook
 - Tailwind
@@ -11,7 +12,7 @@ This is a tutorial that walks through starting a Next.js app from scratch, inclu
 
 ## Prerequisites
 - Node 22+
-- NPM configured for cloudsmith
+- PNPM configured for cloudsmith
 
 ## Chapter 1: Getting Started
 
